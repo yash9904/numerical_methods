@@ -34,19 +34,20 @@ U[:,-1] = 0
 U[0,:] = 0
 U[-1,:] = np.sin(6 * x)
 
-tolerance = 1e-6
+tolerance = 1e-8
 
 U = solve_laplace(U, dx, dy, tolerance)
+
 
 fig = plt.figure(figsize=(15,15))
 ax = fig.gca(projection='3d')
 
 X,Y = np.meshgrid(x, y)
 
-ax.plot_surface(X, Y, U, cmap = 'magma', linewidth = 0.5, antialiased = False)
-
+ax.plot_surface(X, Y, U, cmap = 'plasma', linewidth = 0.5, antialiased = False)
+ax.set_title('Numerical Solution', fontsize = 20)
 ax.set_xlim(0, Lx)
 ax.set_ylim(0, Ly)
-ax.set_xlabel('x')
-ax.set_ylabel('y')
-ax.set_zlabel('Velocity')
+ax.set_xlabel('x', fontsize = 20)
+ax.set_ylabel('y', fontsize = 20)
+ax.set_zlabel('Velocity', fontsize = 15)
