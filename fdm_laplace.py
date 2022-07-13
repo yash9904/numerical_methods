@@ -8,7 +8,6 @@ Ly = 1
 nx = 100
 ny = 100
 
-
 dx = Lx/(nx)
 dy = Ly/(ny)
 
@@ -30,8 +29,6 @@ def solve_laplace(U, dx, dy, tolerance):
         
 U = np.zeros((nx, ny), dtype = np.float32)
 
-
-
 U[:,0] = 0
 U[:,-1] = 0
 U[0,:] = 0
@@ -40,7 +37,6 @@ U[-1,:] = np.sin(6 * x)
 tolerance = 1e-6
 
 U = solve_laplace(U, dx, dy, tolerance)
-
 
 fig = plt.figure(figsize=(15,15))
 ax = fig.gca(projection='3d')
